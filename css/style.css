@@ -11,7 +11,7 @@
   --faint: #909094;
   --rule: #e3e3e0;
   --rule-soft: #efefec;
-  --wash: #f7f7f5;
+  --wash: #ffffff;
   --header-h: 64px;
   --content: 1040px;
   --rail: 200px;
@@ -280,7 +280,7 @@ html[lang="en"] [data-lang="zh"] {
 .hero {
   max-width: var(--content);
   margin: 0 auto;
-  padding: 4.75rem 1.5rem 3.75rem;
+  padding: 3.9rem 1.5rem 3rem;
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
   gap: var(--gap);
@@ -288,24 +288,27 @@ html[lang="en"] [data-lang="zh"] {
 }
 
 .hero__portrait {
-  padding-top: 0.35rem;
+  padding-top: 0.2rem;
+  max-width: 152px;
 }
 
 .hero__frame {
-  border: 1px solid var(--ink);
-  padding: 8px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--rule);
   background: var(--paper);
 }
 
 .hero__frame img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.02);
 }
 
 .hero__eyebrow {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.8rem;
   font-family: var(--font-mono);
   font-size: 0.73rem;
   letter-spacing: 0.14em;
@@ -314,12 +317,12 @@ html[lang="en"] [data-lang="zh"] {
 }
 
 .hero__name {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.25rem;
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 5vw, 3.15rem);
+  font-size: clamp(2.2rem, 4.4vw, 2.8rem);
   font-weight: 500;
   letter-spacing: -0.015em;
-  line-height: 1.08;
+  line-height: 1.1;
   color: var(--ink);
 }
 
@@ -463,7 +466,7 @@ html[lang="en"] [data-lang="zh"] {
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
   column-gap: var(--gap);
-  padding: 3.2rem 0;
+  padding: 2.9rem 0;
   border-top: 1px solid var(--rule);
 }
 
@@ -1001,7 +1004,7 @@ html[lang="en"] [data-lang="zh"] {
   }
 
   .hero__portrait {
-    max-width: 180px;
+    max-width: 132px;
   }
 
   .section {
@@ -1136,12 +1139,23 @@ html[lang="en"] [data-lang="zh"] {
   }
 
   .cta {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 0.45rem 0.6rem;
+  }
+
+  .pulse {
+    margin-top: 0.5rem;
   }
 
   .cta__text {
-    flex: 1 1 auto;
+    grid-column: 2;
+    flex: 0 0 auto;
+  }
+
+  .cta__link {
+    grid-column: 2;
   }
 }
 

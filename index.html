@@ -170,53 +170,43 @@
         <div class="section__body">
           <div class="prose">
             <p data-lang="zh">
-              我相信，通用智能只有落到物理世界才算完成。而要做到这一点，模型需要同时具备三件事：
-              理解空间、记住环境、在算力受限的硬件上实时行动。
-              我目前关注的四条线——通用具身智能模型、世界模型、空间感知与记忆、边缘智能——
-              背后其实是这同一个问题。在同济大学<strong>李国欣</strong>老师指导下，我做外骨骼机器人与生机电系统，
-              试着从这个问题的<strong>最小、最可验证的一端</strong>切入。
+              我是同济大学本科二年级的胡定锴，现在在<strong>李国欣</strong>老师指导下做外骨骼机器人与生机电系统。
+              我的兴趣落在通用具身智能模型、世界模型、空间感知与记忆、边缘智能这几个方向上——
+              说到底是同一件事：让模型不只会说，还能在真实设备上看懂环境、记住环境，然后动起来。
             </p>
             <p data-lang="en">
-              I believe general intelligence is only complete once it reaches the physical world — and that
-              getting there requires three things at once: understanding space, remembering environments, and
-              acting in real time on hardware with a tight compute budget. The four directions I work on —
-              generalist embodied models, world models, spatial perception and memory, and edge intelligence —
-              are really one question. Under the guidance of <strong>Prof. Guoxin Li</strong> at Tongji
-              University, I work on exoskeleton robotics and biomechatronic systems, approaching that question
-              from its <strong>smallest, most checkable end</strong>.
+              I am Dingkai Hu, a second-year undergraduate at Tongji University, working with
+              <strong>Prof. Guoxin Li</strong> on exoskeleton robotics and biomechatronic systems. My
+              interests sit in generalist embodied models, world models, spatial perception and memory, and
+              edge intelligence — which, to me, are the same question: I would like models to do more than
+              talk, and to read an environment, remember it, and act in it on real hardware.
             </p>
             <p data-lang="zh">
-              沿这条线，我以第一作者完成两项工作。<strong>SLICE</strong> 把视觉语言模型剪到约 0.4B 参数，
-              让它在外骨骼辅助行走中直接输出 29 维控制决策，在 Jetson Nano 上以 78 ms 推理延迟运行，
-              把执行错位率从约 60% 降到 13.6%。<strong>ExoMem</strong> 处理另一半——个体差异：
-              把群体先验压成共享矩阵、个体残差写成 rank-4 因子，数据流压缩约 240×，
-              单用户记忆恒定在 512 B 到 1 KB。前者已投稿 ICRA 2027 并在审，后者正在撰写。
+              手上主要在做两件事。一件是把视觉语言模型做轻，让它在 Jetson Nano 这类边缘设备上实时给出
+              外骨骼的控制决策；另一件是给长期使用的设备做记忆，让同一个模型能记住不同使用者的习惯。
+              前者投了 ICRA 2027，正在审；后者还在写。
             </p>
             <p data-lang="en">
-              Along this line I have completed two first-author projects. <strong>SLICE</strong> prunes a
-              vision-language model to roughly 0.4B parameters so that it can emit a 29-dimensional control
-              decision for exoskeleton-assisted walking, running at 78 ms on a Jetson Nano and reducing
-              execution misalignment from about 60% to 13.6%. <strong>ExoMem</strong> takes the other half —
-              individual differences — compressing population priors into a shared matrix and writing
-              per-user residuals as rank-4 factors, which cuts the data stream by roughly 240× while holding
-              per-user memory at 512 B – 1 KB. The first is under review at ICRA 2027; the second is in
-              preparation.
+              Two projects take most of my time. One makes a vision-language model light enough to run on an
+              edge device such as a Jetson Nano and give control decisions for an exoskeleton in real time;
+              the other gives long-lived devices a memory, so that one model can keep track of how different
+              people move. The first is under review at ICRA 2027; the second is still being written.
             </p>
             <p data-lang="zh">
-              我的路径不太常规：本科读的是新能源材料与器件，机器人基本靠自学。
-              为了让想法不停在纸面上，我自己采真机数据、自己搭仿真与故障注入工具链（开源项目 30+ stars），
-              也在蚂蚁灵波的 LingBot-VLA 挑战赛里负责 Franka 遥操作采数与 LoRA 训练策略。
-              我尽量把不成立的结果也写清楚——ExoMem 里有一组方差分解并不支持我原本的跨用户偏好迁移假设，
-              我按原样报告了它。
+              我的背景其实不太对口——本科读的是新能源材料与器件，机器人这块主要靠自学和动手补。
+              平时喜欢自己搭东西：采真机数据、写仿真和标注的小工具、维护几个开源仓库，
+              也在蚂蚁灵波的 VLA 挑战赛里做过数据采集和训练策略。
+              接下来我希望能接触更多不同类型的<strong>具身智能平台</strong>——机械臂、移动机器人、穿戴设备——
+              看看同一个问题换到不同本体上会变成什么样。也欢迎 RA 和远程科研实习的机会。
             </p>
             <p data-lang="en">
-              My path here has been unusual: I am an undergraduate in New Energy Materials and Devices, and
-              robotics is largely self-taught. To keep ideas from staying on paper, I collect real-robot data
-              myself, build my own simulation and fault-injection tooling (an open-source project with 30+
-              stars), and handled Franka teleoperation data collection and the LoRA training strategy in the
-              LingBot-VLA challenge. I also try to write down what does not hold: in ExoMem, one variance
-              decomposition did not support my original assumption of cross-user preference transfer, and it
-              is reported exactly as it came out.
+              My background is a little sideways — I study New Energy Materials and Devices, and robotics is
+              mostly self-taught. I like building things myself: collecting real-robot data, writing small
+              simulation and annotation tools, maintaining a few open-source repositories, and I spent time
+              on data collection and training strategy in the LingBot-VLA challenge. Going forward I would
+              like to work with a broader range of <strong>embodied platforms</strong> — robot arms, mobile
+              robots, wearables — to see how the same questions change with the body. I am also open to
+              research assistantships and remote internships.
             </p>
           </div>
         </div>
