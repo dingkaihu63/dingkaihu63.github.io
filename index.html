@@ -170,29 +170,53 @@
         <div class="section__body">
           <div class="prose">
             <p data-lang="zh">
-              我是<strong>胡定锴</strong>，同济大学工科试验班本科二年级学生，现就读于新能源材料与器件专业，
-              在<strong>李国欣</strong>老师指导下从事外骨骼机器人与生机电系统研究。
-              我关心的问题是：如何让通用模型真正进入物理世界——既理解空间、记住环境，也能在算力受限的设备上实时行动。
+              我相信，通用智能只有落到物理世界才算完成。而要做到这一点，模型需要同时具备三件事：
+              理解空间、记住环境、在算力受限的硬件上实时行动。
+              我目前关注的四条线——通用具身智能模型、世界模型、空间感知与记忆、边缘智能——
+              背后其实是这同一个问题。在同济大学<strong>李国欣</strong>老师指导下，我做外骨骼机器人与生机电系统，
+              试着从这个问题的<strong>最小、最可验证的一端</strong>切入。
             </p>
             <p data-lang="en">
-              I am <strong>Dingkai Hu</strong>, a second-year undergraduate at Tongji University, where I
-              entered through the Engineering Trial Class and now study New Energy Materials and Devices.
-              Under the guidance of <strong>Prof. Guoxin Li</strong>, I work on exoskeleton robotics and
-              biomechatronic systems. My central question is how to bring general-purpose models into the
-              physical world: understanding space, retaining memory of environments, and acting in real time
-              under tight compute budgets.
+              I believe general intelligence is only complete once it reaches the physical world — and that
+              getting there requires three things at once: understanding space, remembering environments, and
+              acting in real time on hardware with a tight compute budget. The four directions I work on —
+              generalist embodied models, world models, spatial perception and memory, and edge intelligence —
+              are really one question. Under the guidance of <strong>Prof. Guoxin Li</strong> at Tongji
+              University, I work on exoskeleton robotics and biomechatronic systems, approaching that question
+              from its <strong>smallest, most checkable end</strong>.
             </p>
             <p data-lang="zh">
-              目前沿两条主线推进：其一，面向外骨骼辅助行走的<strong>轻量多模态决策</strong>，把视觉语言模型压缩到边缘端可实时推理的规模，输出可执行的控制向量；
-              其二，面向长期使用的<strong>结构化记忆</strong>，以有界、可检索的表征刻画个体差异。相关工作以第一作者投稿 ICRA 2027，另一篇正在撰写。
+              沿这条线，我以第一作者完成两项工作。<strong>SLICE</strong> 把视觉语言模型剪到约 0.4B 参数，
+              让它在外骨骼辅助行走中直接输出 29 维控制决策，在 Jetson Nano 上以 78 ms 推理延迟运行，
+              把执行错位率从约 60% 降到 13.6%。<strong>ExoMem</strong> 处理另一半——个体差异：
+              把群体先验压成共享矩阵、个体残差写成 rank-4 因子，数据流压缩约 240×，
+              单用户记忆恒定在 512 B 到 1 KB。前者已投稿 ICRA 2027 并在审，后者正在撰写。
             </p>
             <p data-lang="en">
-              Two threads currently run in parallel: <strong>lightweight multimodal decision-making</strong>
-              for exoskeleton-assisted walking, which compresses a vision-language model to a size that runs
-              in real time on the edge and emits executable control vectors; and
-              <strong>structured memory</strong> for long-term use, which represents individual differences
-              with bounded, retrievable representations. The first has been submitted to ICRA 2027 as a
-              first-author paper; the second is in preparation.
+              Along this line I have completed two first-author projects. <strong>SLICE</strong> prunes a
+              vision-language model to roughly 0.4B parameters so that it can emit a 29-dimensional control
+              decision for exoskeleton-assisted walking, running at 78 ms on a Jetson Nano and reducing
+              execution misalignment from about 60% to 13.6%. <strong>ExoMem</strong> takes the other half —
+              individual differences — compressing population priors into a shared matrix and writing
+              per-user residuals as rank-4 factors, which cuts the data stream by roughly 240× while holding
+              per-user memory at 512 B – 1 KB. The first is under review at ICRA 2027; the second is in
+              preparation.
+            </p>
+            <p data-lang="zh">
+              我的路径不太常规：本科读的是新能源材料与器件，机器人基本靠自学。
+              为了让想法不停在纸面上，我自己采真机数据、自己搭仿真与故障注入工具链（开源项目 30+ stars），
+              也在蚂蚁灵波的 LingBot-VLA 挑战赛里负责 Franka 遥操作采数与 LoRA 训练策略。
+              我尽量把不成立的结果也写清楚——ExoMem 里有一组方差分解并不支持我原本的跨用户偏好迁移假设，
+              我按原样报告了它。
+            </p>
+            <p data-lang="en">
+              My path here has been unusual: I am an undergraduate in New Energy Materials and Devices, and
+              robotics is largely self-taught. To keep ideas from staying on paper, I collect real-robot data
+              myself, build my own simulation and fault-injection tooling (an open-source project with 30+
+              stars), and handled Franka teleoperation data collection and the LoRA training strategy in the
+              LingBot-VLA challenge. I also try to write down what does not hold: in ExoMem, one variance
+              decomposition did not support my original assumption of cross-user preference transfer, and it
+              is reported exactly as it came out.
             </p>
           </div>
         </div>
@@ -431,10 +455,15 @@
                   <h3 class="repo__name">
                     <a href="https://github.com/dingkaihu63/dsh-robotic-harness" target="_blank" rel="noopener noreferrer">dsh-robotic-harness</a>
                   </h3>
-                  <p class="repo__tags">
-                    <span class="tag">★ 30+</span><span class="tag">MIT</span>
-                    <span class="tag" data-lang="zh">工具集</span><span class="tag" data-lang="en">Toolkit</span>
-                  </p>
+                  <div class="repo__side">
+                    <p class="repo__tags">
+                      <span class="tag">★ 30+</span><span class="tag">MIT</span>
+                      <span class="tag" data-lang="zh">工具集</span><span class="tag" data-lang="en">Toolkit</span>
+                    </p>
+                    <a class="repo__link" href="https://github.com/dingkaihu63/dsh-robotic-harness" target="_blank" rel="noopener noreferrer" aria-label="Open dsh-robotic-harness on GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <p class="repo__desc" data-lang="zh">
                   面向 DeepSeek Harness 的具身智能研究工具集：URDF/MJCF 资产检查与转换、MuJoCo 抓放仿真与
@@ -456,10 +485,15 @@
                   <h3 class="repo__name">
                     <a href="https://github.com/dingkaihu63/mearm-embodied-demo" target="_blank" rel="noopener noreferrer">mearm-embodied-demo</a>
                   </h3>
-                  <p class="repo__tags">
-                    <span class="tag">MIT</span>
-                    <span class="tag" data-lang="zh">桌面机械臂</span><span class="tag" data-lang="en">Desktop arm</span>
-                  </p>
+                  <div class="repo__side">
+                    <p class="repo__tags">
+                      <span class="tag">MIT</span>
+                      <span class="tag" data-lang="zh">桌面机械臂</span><span class="tag" data-lang="en">Desktop arm</span>
+                    </p>
+                    <a class="repo__link" href="https://github.com/dingkaihu63/mearm-embodied-demo" target="_blank" rel="noopener noreferrer" aria-label="Open mearm-embodied-demo on GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <p class="repo__desc" data-lang="zh">
                   成本低于 300 元的桌面机械臂，打通「感知 — 推理 — 行动」闭环：YOLOv8 视觉抓取、Vosk
@@ -480,10 +514,15 @@
                   <h3 class="repo__name">
                     <a href="https://github.com/dingkaihu63/MoE2Edge" target="_blank" rel="noopener noreferrer">MoE2Edge</a>
                   </h3>
-                  <p class="repo__tags">
-                    <span class="tag">Apache-2.0</span>
-                    <span class="tag" data-lang="zh">模型蒸馏</span><span class="tag" data-lang="en">Distillation</span>
-                  </p>
+                  <div class="repo__side">
+                    <p class="repo__tags">
+                      <span class="tag">Apache-2.0</span>
+                      <span class="tag" data-lang="zh">模型蒸馏</span><span class="tag" data-lang="en">Distillation</span>
+                    </p>
+                    <a class="repo__link" href="https://github.com/dingkaihu63/MoE2Edge" target="_blank" rel="noopener noreferrer" aria-label="Open MoE2Edge on GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <p class="repo__desc" data-lang="zh">
                   从稀疏 MoE 教师模型蒸馏领域专用边缘模型：基于路由的专家选择（DCRS）、Compact-MoE /
@@ -504,10 +543,15 @@
                   <h3 class="repo__name">
                     <a href="https://github.com/dingkaihu63/Multimodal-Annotation-Studio" target="_blank" rel="noopener noreferrer">Multimodal-Annotation-Studio</a>
                   </h3>
-                  <p class="repo__tags">
-                    <span class="tag">MIT</span>
-                    <span class="tag" data-lang="zh">数据工具</span><span class="tag" data-lang="en">Data tooling</span>
-                  </p>
+                  <div class="repo__side">
+                    <p class="repo__tags">
+                      <span class="tag">MIT</span>
+                      <span class="tag" data-lang="zh">数据工具</span><span class="tag" data-lang="en">Data tooling</span>
+                    </p>
+                    <a class="repo__link" href="https://github.com/dingkaihu63/Multimodal-Annotation-Studio" target="_blank" rel="noopener noreferrer" aria-label="Open Multimodal-Annotation-Studio on GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <p class="repo__desc" data-lang="zh">
                   面向可穿戴机器人多模态时序数据（RGB / Depth / FSR / IMU）的标注工具：时间线自动对齐、
@@ -528,9 +572,14 @@
                   <h3 class="repo__name">
                     <a href="https://github.com/dingkaihu63/edge-phm-pareto" target="_blank" rel="noopener noreferrer">edge-phm-pareto</a>
                   </h3>
-                  <p class="repo__tags">
-                    <span class="tag" data-lang="zh">科研代码</span><span class="tag" data-lang="en">Research code</span>
-                  </p>
+                  <div class="repo__side">
+                    <p class="repo__tags">
+                      <span class="tag" data-lang="zh">科研代码</span><span class="tag" data-lang="en">Research code</span>
+                    </p>
+                    <a class="repo__link" href="https://github.com/dingkaihu63/edge-phm-pareto" target="_blank" rel="noopener noreferrer" aria-label="Open edge-phm-pareto on GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                  </div>
                 </div>
                 <p class="repo__desc" data-lang="zh">
                   轻量、不确定度感知的可解释工业故障预测框架，在多个工业时序基准上完成对比实验与部署评估。
@@ -542,6 +591,13 @@
               </div>
             </li>
           </ul>
+          <p class="more more--indent">
+            <a class="more__link" href="https://github.com/dingkaihu63?tab=repositories" target="_blank" rel="noopener noreferrer">
+              <span data-lang="zh">查看全部仓库</span>
+              <span data-lang="en">All repositories</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </p>
         </div>
       </section>
 
