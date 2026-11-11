@@ -9,13 +9,59 @@
       content="Dingkai Hu (胡定锴), undergraduate at Tongji University. Research interests: generalist embodied models, world models, spatial perception and memory, edge intelligence. Open to research assistantships and remote research internships."
     />
     <meta name="author" content="Dingkai Hu" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="https://dingkaihu63.github.io/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/favicon.svg" />
+    <link rel="sitemap" href="/sitemap.xml" />
+
     <meta property="og:title" content="Dingkai Hu · 胡定锴" />
     <meta
       property="og:description"
       content="Generalist embodied models, world models, spatial perception &amp; memory, and edge intelligence."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dingkaihu63.github.io/" />
+    <meta property="og:site_name" content="Dingkai Hu" />
+    <meta property="og:image" content="https://dingkaihu63.github.io/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dingkai Hu · 胡定锴" />
+    <meta
+      name="twitter:description"
+      content="Undergraduate at Tongji University working on embodied models, world models, and edge intelligence."
+    />
+    <meta name="twitter:image" content="https://dingkaihu63.github.io/assets/og.png" />
+
     <link rel="stylesheet" href="css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dingkai Hu",
+        "alternateName": "胡定锴",
+        "url": "https://dingkaihu63.github.io/",
+        "image": "https://dingkaihu63.github.io/assets/profile.jpg",
+        "email": "mailto:dingkaihu63@gmail.com",
+        "jobTitle": "Undergraduate Student",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Tongji University"
+        },
+        "sameAs": ["https://github.com/dingkaihu63"],
+        "knowsAbout": [
+          "Embodied AI",
+          "World models",
+          "Vision-language models",
+          "Edge intelligence",
+          "Exoskeleton robotics"
+        ]
+      }
+    </script>
     <script>
       /* 在首帧前套用本会话内选择的语言；新会话一律英文 */
       (function () {
@@ -31,6 +77,11 @@
     data-title-zh="胡定锴 · 个人主页"
     data-title-en="Dingkai Hu · Personal Homepage"
   >
+    <a class="skip" href="#main">
+      <span data-lang="zh">跳到主要内容</span>
+      <span data-lang="en">Skip to content</span>
+    </a>
+
     <header class="site-header">
       <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
       <div class="site-header__inner">
@@ -74,7 +125,13 @@
     <section class="hero">
       <div class="hero__portrait">
         <div class="hero__frame">
-          <img src="assets/profile.jpg" alt="Dingkai Hu" width="320" height="320" />
+          <img
+            src="assets/profile.jpg"
+            alt="Dingkai Hu"
+            width="400"
+            height="400"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -153,7 +210,7 @@
       </div>
     </section>
 
-    <main class="main">
+    <main class="main" id="main">
       <!-- 01 -->
       <section class="section" id="about">
         <div class="section__rail">
@@ -899,6 +956,12 @@
         <span>2026.11</span>
       </p>
     </footer>
+
+    <button class="to-top" type="button" id="to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M12 19V6m0 0-5 5m5-5 5 5" />
+      </svg>
+    </button>
 
     <script src="js/main.js"></script>
   </body>

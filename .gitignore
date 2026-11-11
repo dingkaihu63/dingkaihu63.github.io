@@ -4,7 +4,6 @@ Thumbs.db
 desktop.ini
 *.swp
 
-# temp preview helpers
-_peek.html
-_diag.html
+# temp preview / render helpers
+_*.html
 _*.png

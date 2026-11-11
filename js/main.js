@@ -101,6 +101,23 @@
   window.addEventListener("resize", onScroll);
   updateProgress();
 
+  /* ——— 回到顶部 ——— */
+
+  const toTop = document.getElementById("to-top");
+  if (toTop) {
+    const syncToTop = () => {
+      toTop.classList.toggle("is-on", window.scrollY > 720);
+    };
+
+    window.addEventListener("scroll", syncToTop, { passive: true });
+    syncToTop();
+
+    toTop.addEventListener("click", () => {
+      const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+    });
+  }
+
   /* ——— 目录高亮 ——— */
 
   if (!nav || !("IntersectionObserver" in window)) return;
