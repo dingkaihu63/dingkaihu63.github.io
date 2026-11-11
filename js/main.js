@@ -9,7 +9,11 @@
   const navList = nav ? nav.querySelector(".nav") : null;
   const progressBar = document.getElementById("progress-bar");
 
-  /* ——— 语言切换 ——— */
+  /* 页面标题按语言切换；各页在 <body data-title-zh/en> 里声明自己的标题 */
+  const titleZh = document.body.dataset.titleZh;
+  const titleEn = document.body.dataset.titleEn;
+
+  /* ——— 语言切换（默认英文） ——— */
 
   function applyLang(lang) {
     const next = lang === "en" ? "en" : "zh-CN";
@@ -18,8 +22,9 @@
     if (btnZh) btnZh.setAttribute("aria-pressed", next === "zh-CN" ? "true" : "false");
     if (btnEn) btnEn.setAttribute("aria-pressed", next === "en" ? "true" : "false");
 
-    document.title =
-      next === "en" ? "Dingkai Hu · Personal Homepage" : "胡定锴 · 个人主页";
+    if (titleZh && titleEn) {
+      document.title = next === "en" ? titleEn : titleZh;
+    }
 
     try {
       localStorage.setItem(STORAGE_KEY, next);
@@ -28,7 +33,7 @@
     }
   }
 
-  let initial = "zh-CN";
+  let initial = "en";
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === "en" || saved === "zh-CN") initial = saved;

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog · Dingkai Hu</title>
+    <meta
+      name="description"
+      content="Notes and posts by Dingkai Hu — project post-mortems, tooling, and embodied AI."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script>
+      (function () {
+        try {
+          var l = localStorage.getItem("site-lang");
+          if (l === "zh-CN" || l === "en") document.documentElement.lang = l;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-title-zh="博客 · 胡定锴" data-title-en="Blog · Dingkai Hu">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="../">
+          <span class="site-logo__mark" aria-hidden="true">胡</span>
+          <span class="site-logo__text">
+            <span data-lang="zh">胡定锴</span>
+            <span data-lang="en">Dingkai Hu</span>
+          </span>
+        </a>
+        <div class="header-right">
+          <a class="blog-back" href="../">
+            <span aria-hidden="true">←</span>
+            <span data-lang="zh">返回主页</span>
+            <span data-lang="en">Home</span>
+          </a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" id="lang-zh" aria-pressed="false">中文</button>
+            <button type="button" id="lang-en" aria-pressed="true">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="blog-wrap">
+      <h1 class="blog-title">Blog</h1>
+      <p class="blog-intro">
+        <span data-lang="zh">项目复盘、工具踩坑，以及一些不成体系的记录。</span>
+        <span data-lang="en">Project post-mortems, tooling detours, and looser records.</span>
+      </p>
+
+      <ul class="post-list">
+        <!--
+          新增文章：复制下面这段模板，改日期、标题、摘要和链接即可。
+          文章文件放在同一目录（如 2026-12-hello.html），页面里引用 ../css/style.css 与 ../js/main.js。
+
+          <li class="post">
+            <time class="post__date" datetime="2026-12">2026.12</time>
+            <div>
+              <h2 class="post__title"><a href="2026-12-hello.html">文章标题</a></h2>
+              <p class="post__desc">一句话摘要。</p>
+            </div>
+          </li>
+        -->
+      </ul>
+
+      <p class="empty">
+        <span data-lang="zh">还没有发布文章，第一篇正在写。</span>
+        <span data-lang="en">No posts yet — the first one is being written.</span>
+      </p>
+
+      <p class="blog-foot">
+        <span>© <span id="year">2026</span></span>
+        <span aria-hidden="true">·</span>
+        <span data-lang="zh">胡定锴 · 同济大学</span>
+        <span data-lang="en">Dingkai Hu · Tongji University</span>
+      </p>
+    </main>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

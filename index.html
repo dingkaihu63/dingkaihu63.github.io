@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>胡定锴 · 个人主页</title>
+    <title>Dingkai Hu · Personal Homepage</title>
     <meta
       name="description"
-      content="胡定锴（Dingkai Hu），同济大学本科生。研究兴趣：通用具身智能模型、世界模型、空间感知与记忆、边缘智能。欢迎 RA 与远程科研实习来信。"
+      content="Dingkai Hu (胡定锴), undergraduate at Tongji University. Research interests: generalist embodied models, world models, spatial perception and memory, edge intelligence. Open to research assistantships and remote research internships."
     />
     <meta name="author" content="Dingkai Hu" />
-    <meta property="og:title" content="胡定锴 · Dingkai Hu" />
+    <meta property="og:title" content="Dingkai Hu · 胡定锴" />
     <meta
       property="og:description"
       content="Generalist embodied models, world models, spatial perception &amp; memory, and edge intelligence."
     />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      /* 在首帧前套用上次选择的语言，避免默认英文闪一下再切回中文 */
+      (function () {
+        try {
+          var l = localStorage.getItem("site-lang");
+          if (l === "zh-CN" || l === "en") document.documentElement.lang = l;
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body id="top">
+  <body
+    id="top"
+    data-title-zh="胡定锴 · 个人主页"
+    data-title-en="Dingkai Hu · Personal Homepage"
+  >
     <header class="site-header">
       <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
       <div class="site-header__inner">
@@ -42,18 +55,17 @@
           <nav id="site-nav" aria-label="Site">
             <ul class="nav">
               <li><a href="#about"><span data-lang="zh">关于</span><span data-lang="en">About</span></a></li>
-              <li><a href="#news"><span data-lang="zh">动态</span><span data-lang="en">News</span></a></li>
               <li><a href="#publications"><span data-lang="zh">论文</span><span data-lang="en">Papers</span></a></li>
-              <li><a href="#experience"><span data-lang="zh">经历</span><span data-lang="en">Experience</span></a></li>
               <li><a href="#projects"><span data-lang="zh">项目</span><span data-lang="en">Projects</span></a></li>
-              <li><a href="#skills"><span data-lang="zh">技能</span><span data-lang="en">Skills</span></a></li>
+              <li><a href="#notes"><span data-lang="zh">笔记</span><span data-lang="en">Notes</span></a></li>
+              <li><a href="#blog"><span data-lang="zh">博客</span><span data-lang="en">Blog</span></a></li>
               <li><a href="#cv"><span data-lang="zh">简历</span><span data-lang="en">CV</span></a></li>
               <li><a href="#contact"><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a></li>
             </ul>
           </nav>
           <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" id="lang-zh" aria-pressed="true">中文</button>
-            <button type="button" id="lang-en" aria-pressed="false">EN</button>
+            <button type="button" id="lang-zh" aria-pressed="false">中文</button>
+            <button type="button" id="lang-en" aria-pressed="true">EN</button>
           </div>
         </div>
       </div>
@@ -62,7 +74,7 @@
     <section class="hero">
       <div class="hero__portrait">
         <div class="hero__frame">
-          <img src="assets/profile.jpg" alt="胡定锴 / Dingkai Hu" width="320" height="320" />
+          <img src="assets/profile.jpg" alt="Dingkai Hu" width="320" height="320" />
         </div>
       </div>
 
@@ -132,8 +144,8 @@
               正在寻找 <strong>RA</strong> 与<strong>远程科研实习</strong>机会，欢迎来信交流。
             </span>
             <span data-lang="en">
-              Open to <strong>research assistantships</strong> and <strong>remote research internships</strong>
-              — please feel free to email me.
+              Open to <strong>research assistantships</strong> and
+              <strong>remote research internships</strong>.
             </span>
           </p>
           <a class="cta__link" href="mailto:dingkaihu63@gmail.com">
@@ -533,10 +545,125 @@
         </div>
       </section>
 
-      <!-- 06 -->
-      <section class="section" id="education">
+      <!-- 06 · 学习笔记 -->
+      <section class="section" id="notes">
         <div class="section__rail">
           <span class="section__num">06</span>
+          <h2 class="section__label">
+            <span data-lang="zh">笔记</span>
+            <span data-lang="en">Notes</span>
+          </h2>
+        </div>
+        <div class="section__body">
+          <p class="section__lede">
+            <span data-lang="zh">读论文与动手过程中整理的学习内容，会陆续放上来。</span>
+            <span data-lang="en">Study notes from reading and building, published as they are cleaned up.</span>
+          </p>
+          <ul class="list">
+            <li class="row">
+              <span class="row__meta">01</span>
+              <div class="row__main">
+                <h3 class="note__title">
+                  <span data-lang="zh">具身智能基础</span>
+                  <span data-lang="en">Foundations of embodied AI</span>
+                </h3>
+                <p class="note__desc">
+                  <span data-lang="zh">从模仿学习、VLA 到机器人基础模型：概念地图与阅读顺序。</span>
+                  <span data-lang="en">From imitation learning and VLA to robot foundation models — a concept map and reading order.</span>
+                </p>
+                <p class="note__status">
+                  <span class="tag" data-lang="zh">整理中</span>
+                  <span class="tag" data-lang="en">In progress</span>
+                </p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="row__meta">02</span>
+              <div class="row__main">
+                <h3 class="note__title">
+                  <span data-lang="zh">世界模型</span>
+                  <span data-lang="en">World models</span>
+                </h3>
+                <p class="note__desc">
+                  <span data-lang="zh">四条路线（观测 / 潜状态 / 决策量 / 表征）的区别、复合误差，以及如何判断一个模型是否真服务于决策。</span>
+                  <span data-lang="en">The four families (observation, latent state, decision, representation), compounding error, and how to tell whether a model actually serves decision-making.</span>
+                </p>
+                <p class="note__status">
+                  <span class="tag" data-lang="zh">整理中</span>
+                  <span class="tag" data-lang="en">In progress</span>
+                </p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="row__meta">03</span>
+              <div class="row__main">
+                <h3 class="note__title">
+                  <span data-lang="zh">深度学习基础</span>
+                  <span data-lang="en">Deep learning fundamentals</span>
+                </h3>
+                <p class="note__desc">
+                  <span data-lang="zh">PyTorch 与 NumPy 的动手笔记：张量、自动求导、训练循环与常见报错。</span>
+                  <span data-lang="en">Hands-on notes on PyTorch and NumPy: tensors, autograd, training loops, and the errors that keep coming back.</span>
+                </p>
+                <p class="note__status">
+                  <span class="tag" data-lang="zh">整理中</span>
+                  <span class="tag" data-lang="en">In progress</span>
+                </p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="row__meta">04</span>
+              <div class="row__main">
+                <h3 class="note__title">
+                  <span data-lang="zh">论文写作与 LaTeX</span>
+                  <span data-lang="en">Paper writing &amp; LaTeX</span>
+                </h3>
+                <p class="note__desc">
+                  <span data-lang="zh">ICRA 模板下的版面控制、图表规范与投稿流程记录。</span>
+                  <span data-lang="en">Working within the ICRA template: page budget, figures, and the submission checklist.</span>
+                </p>
+                <p class="note__status">
+                  <span class="tag" data-lang="zh">整理中</span>
+                  <span class="tag" data-lang="en">In progress</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 07 · 博客 -->
+      <section class="section" id="blog">
+        <div class="section__rail">
+          <span class="section__num">07</span>
+          <h2 class="section__label">
+            <span data-lang="zh">博客</span>
+            <span data-lang="en">Blog</span>
+          </h2>
+        </div>
+        <div class="section__body">
+          <p class="section__lede">
+            <span data-lang="zh">项目复盘、工具踩坑，以及一些不成体系的记录。</span>
+            <span data-lang="en">Project post-mortems, tooling detours, and looser records.</span>
+          </p>
+          <p class="empty">
+            <span data-lang="zh">还没有发布文章，第一篇正在写。</span>
+            <span data-lang="en">No posts yet — the first one is being written.</span>
+          </p>
+          <p class="more">
+            <a class="more__link" href="blog/">
+              <span data-lang="zh">查看全部文章</span>
+              <span data-lang="en">All posts</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 08 -->
+      <section class="section" id="education">
+        <div class="section__rail">
+          <span class="section__num">08</span>
           <h2 class="section__label">
             <span data-lang="zh">教育</span>
             <span data-lang="en">Education</span>
@@ -561,16 +688,19 @@
         </div>
       </section>
 
-      <!-- 07 -->
+      <!-- 09 · 技能与荣誉 -->
       <section class="section" id="skills">
         <div class="section__rail">
-          <span class="section__num">07</span>
+          <span class="section__num">09</span>
           <h2 class="section__label">
-            <span data-lang="zh">技能</span>
-            <span data-lang="en">Skills</span>
+            <span data-lang="zh">技能与荣誉</span>
+            <span data-lang="en">Skills &amp; Honors</span>
           </h2>
         </div>
         <div class="section__body">
+          <p class="subhead">
+            <span data-lang="zh">技能</span><span data-lang="en">Skills</span>
+          </p>
           <dl class="list skill-table">
             <div class="row skill-row">
               <dt class="row__meta">
@@ -606,19 +736,10 @@
               </dd>
             </div>
           </dl>
-        </div>
-      </section>
 
-      <!-- 08 -->
-      <section class="section" id="honors">
-        <div class="section__rail">
-          <span class="section__num">08</span>
-          <h2 class="section__label">
-            <span data-lang="zh">荣誉</span>
-            <span data-lang="en">Honors</span>
-          </h2>
-        </div>
-        <div class="section__body">
+          <p class="subhead subhead--gap">
+            <span data-lang="zh">荣誉</span><span data-lang="en">Honors</span>
+          </p>
           <ul class="list">
             <li class="row">
               <span class="row__meta">2026</span>
@@ -638,10 +759,10 @@
         </div>
       </section>
 
-      <!-- 09 · 仅下载，不展示 -->
+      <!-- 10 · 简历（只下载，不展示） -->
       <section class="section" id="cv">
         <div class="section__rail">
-          <span class="section__num">09</span>
+          <span class="section__num">10</span>
           <h2 class="section__label">
             <span data-lang="zh">简历</span>
             <span data-lang="en">CV</span>
@@ -687,10 +808,10 @@
         </div>
       </section>
 
-      <!-- 10 -->
+      <!-- 11 -->
       <section class="section" id="contact">
         <div class="section__rail">
-          <span class="section__num">10</span>
+          <span class="section__num">11</span>
           <h2 class="section__label">
             <span data-lang="zh">联系</span>
             <span data-lang="en">Contact</span>
