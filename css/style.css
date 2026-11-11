@@ -307,15 +307,6 @@ html[lang="en"] [data-lang="zh"] {
   object-fit: cover;
 }
 
-.hero__eyebrow {
-  margin: 0 0 0.8rem;
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
 .hero__name {
   margin: 0 0 0.25rem;
   font-family: var(--font-serif);

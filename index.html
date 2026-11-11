@@ -17,10 +17,10 @@
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="css/style.css" />
     <script>
-      /* 在首帧前套用上次选择的语言，避免默认英文闪一下再切回中文 */
+      /* 在首帧前套用本会话内选择的语言；新会话一律英文 */
       (function () {
         try {
-          var l = localStorage.getItem("site-lang");
+          var l = sessionStorage.getItem("site-lang");
           if (l === "zh-CN" || l === "en") document.documentElement.lang = l;
         } catch (e) {}
       })();
@@ -79,10 +79,6 @@
       </div>
 
       <div class="hero__body">
-        <p class="hero__eyebrow">
-          <span data-lang="zh">同济大学 · 本科二年级</span>
-          <span data-lang="en">Tongji University · Sophomore</span>
-        </p>
         <h1 class="hero__name">
           <span data-lang="zh">胡定锴</span>
           <span data-lang="en">Dingkai Hu</span>
@@ -182,31 +178,22 @@
               talk, and to read an environment, remember it, and act in it on real hardware.
             </p>
             <p data-lang="zh">
-              手上主要在做两件事。一件是把视觉语言模型做轻，让它在 Jetson Nano 这类边缘设备上实时给出
-              外骨骼的控制决策；另一件是给长期使用的设备做记忆，让同一个模型能记住不同使用者的习惯。
-              前者投了 ICRA 2027，正在审；后者还在写。
+              我的工作大致可以概括成两句：让视觉语言模型在外骨骼这类边缘设备上跑得动，
+              也让它记得住不同使用者的习惯。第一篇投了 ICRA 2027，正在审；第二篇还在写。
             </p>
             <p data-lang="en">
-              Two projects take most of my time. One makes a vision-language model light enough to run on an
-              edge device such as a Jetson Nano and give control decisions for an exoskeleton in real time;
-              the other gives long-lived devices a memory, so that one model can keep track of how different
-              people move. The first is under review at ICRA 2027; the second is still being written.
+              My work comes down to two sentences: making a vision-language model light enough to run on
+              edge hardware, and making it remember how each person moves. The first paper is under review
+              at ICRA 2027; the second is still being written.
             </p>
             <p data-lang="zh">
-              我的背景其实不太对口——本科读的是新能源材料与器件，机器人这块主要靠自学和动手补。
-              平时喜欢自己搭东西：采真机数据、写仿真和标注的小工具、维护几个开源仓库，
-              也在蚂蚁灵波的 VLA 挑战赛里做过数据采集和训练策略。
-              接下来我希望能接触更多不同类型的<strong>具身智能平台</strong>——机械臂、移动机器人、穿戴设备——
-              看看同一个问题换到不同本体上会变成什么样。也欢迎 RA 和远程科研实习的机会。
+              我对具身智能的很多方向都有强烈兴趣，接下来特别想接触不同类型的平台——机械臂、移动机器人、
+              穿戴设备——看看同一个问题换到不同本体上会变成什么样。也欢迎 RA 和远程科研实习的机会。
             </p>
             <p data-lang="en">
-              My background is a little sideways — I study New Energy Materials and Devices, and robotics is
-              mostly self-taught. I like building things myself: collecting real-robot data, writing small
-              simulation and annotation tools, maintaining a few open-source repositories, and I spent time
-              on data collection and training strategy in the LingBot-VLA challenge. Going forward I would
-              like to work with a broader range of <strong>embodied platforms</strong> — robot arms, mobile
-              robots, wearables — to see how the same questions change with the body. I am also open to
-              research assistantships and remote internships.
+              I am strongly interested in many corners of embodied AI, and I would especially like to work
+              with different platforms — robot arms, mobile robots, wearables — to see how the same question
+              changes with the body. I am also open to research assistantships and remote internships.
             </p>
           </div>
         </div>

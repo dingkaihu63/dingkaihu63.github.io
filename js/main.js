@@ -27,7 +27,8 @@
     }
 
     try {
-      localStorage.setItem(STORAGE_KEY, next);
+      /* 只记在当前会话里：新开页面一律先显示英文 */
+      sessionStorage.setItem(STORAGE_KEY, next);
     } catch (_) {
       /* ignore private-mode errors */
     }
@@ -35,7 +36,7 @@
 
   let initial = "en";
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = sessionStorage.getItem(STORAGE_KEY);
     if (saved === "en" || saved === "zh-CN") initial = saved;
   } catch (_) {
     /* ignore */
