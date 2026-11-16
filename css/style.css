@@ -830,6 +830,14 @@ html[lang="en"] [data-lang="zh"] {
   color: var(--ink);
 }
 
+.note__title a {
+  border-bottom-color: transparent;
+}
+
+.note__title a:hover {
+  border-bottom-color: var(--ink);
+}
+
 .note__desc {
   margin: 0 0 0.55rem;
   font-size: 0.92rem;
@@ -1191,6 +1199,123 @@ html[lang="en"] [data-lang="zh"] {
 
   .cta__link {
     grid-column: 2;
+  }
+}
+
+/* ==========================================================================
+   Article page
+   ========================================================================== */
+
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.75rem 1.5rem 4.5rem;
+}
+
+.article__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.article__kicker time {
+  font-variant-numeric: tabular-nums;
+}
+
+.article__title {
+  margin: 0 0 2.2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.article__body p {
+  margin: 0 0 1.15rem;
+  font-size: 1.02rem;
+  line-height: 1.95;
+  text-wrap: pretty;
+}
+
+.article__body > p:last-child {
+  margin-bottom: 0;
+}
+
+.article__body .article__punch {
+  margin: 2.2rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.26rem;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.article__quote {
+  margin: 2.4rem 0;
+  padding: 0.15rem 0 0.15rem 1.4rem;
+  border-left: 2px solid var(--rule);
+}
+
+.article__body .article__quote p {
+  margin: 0 0 0.9rem;
+  font-size: 0.97rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.article__quote cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.03em;
+  color: var(--faint);
+}
+
+.article__end {
+  margin: 3rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  text-align: right;
+}
+
+.article__nav {
+  margin-top: 2.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem 1.6rem;
+}
+
+@media (max-width: 520px) {
+  .article {
+    padding: 2.6rem 1.1rem 3.2rem;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .article__body .article__punch {
+    font-size: 1.15rem;
   }
 }
 
